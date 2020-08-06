@@ -3,9 +3,9 @@ var generateBtn = document.querySelector("#generate");
 
 // // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-    passwordText.nodeValue = password;
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.Value = password;
 }
 
 // Add event listener to generate button
@@ -13,11 +13,11 @@ generateBtn.addEventListener("click", writePassword);
 
 // Prompts //
 var charLength = parseInt(prompt("Between 8-128 characters, how many would you like?"));
+
 var upCase = confirm("Would you like Upper Case letters?");
 var lowCase = confirm("Would you like lower case letters?");
 var numb = confirm("Would you like numbers?");
 var sym = confirm("Would you like symbols?");
-
 
 
 
@@ -34,76 +34,73 @@ var sym = confirm("Would you like symbols?");
 
 
     
-function writeLowerCase() {
-    var text1 = "";
-    const lettersL = 'abcdefghijklmnopqrstuvxyz';
-    text1 += lettersL[Math.floor(Math.random() * lettersL.length)];
+// function writeLowerCase() {
+//     var text1 = "";
+//     const lettersL = 'abcdefghijklmnopqrstuvxyz';
+//     text1 += lettersL[Math.floor(Math.random() * lettersL.length)];
+//     console.log(text1);
     
-    console.log(text1);
+// }
+
+// function writeUpperCase() {
+//     var text2 = "";
+//     const lettersU = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
+//     text2 += lettersU[Math.floor(Math.random() * lettersU.length)];
+//     console.log(text2);
+// }
+
+// function writeRanNumber() {
+//     var text3 = "";
+//     const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+//     text3 += numbers[Math.floor(Math.random() * numbers.length)];
+//     console.log(text3);
     
-}
+// }
 
-function writeUpperCase() {
-    var text2 = "";
-    const lettersU = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
-    text2 += lettersU[Math.floor(Math.random() * lettersU.length)];
-    console.log(text2);
-}
-
-function writeRanNumber() {
-    var text3 = "";
-    const numbers = '1234567789';
-    text3 = numbers[Math.floor(Math.random() * 9)];
-    console.log(text3);
+// function writeRanSymbol() {
+//     var text4 = "";
+//     const symbols = '!@#$%^&*()';
+//     text4 = symbols[Math.floor(Math.random() * 10)];
+//     console.log(text4);
     
-}
+// }\
+const lettersL = ["a", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m" ,"n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"] 
+const lettersU = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z"]      
+const numbers = "123456789".split("") 
+const symbols = "!@#$%^&*()".split("")
 
-function writeRanSymbol() {
-    var text4 = "";
-    const symbols = '!@#$%^&*()';
-    text4 = symbols[Math.floor(Math.random() * 10)];
-    console.log(text4);
-    
-}
+var passwordRan = [""];
+var random = "";
 
-
+if (upCase === true) {
+    passwordRan = lettersU + passwordRan;
+};       
+if (lowCase === true) {
+    passwordRan = lettersL + passwordRan;
+};
+if (numb === true) {
+    passwordRan = numbers + passwordRan;
+};
+if (sym === true) {
+    passwordRan = symbols + passwordRan;
+};
 
 function generatePassword() {
-    
     for (var i = 0; i < charLength; i++) {
+    var random = passwordRan[Math.floor(Math.random() * passwordRan.length)]   
+    };
+console.log(random)
+};
 
-        if (upCase === true) {
-            writeUpperCase();
-            charLength = charLength - 1;
-        }
-        else if (upCase === false) {
-            
-        }
+// for (var i = 0; i < charLength; i++) {
         
-        if (lowCase === true) {
-            toString.writeLowerCase;
-            writeLowerCase();
-            charLength = charLength - 1;
-        }
-        else if (lowCase === false) {
-        
-        };
-        if (numb === true) {
-            writeRanNumber();
-            i + 1;
-        }
-        else if (numb === false) {
-        
-        };
-        if (sym === true) {
-            writeRanSymbol();
-            i + 1;
-        }
-        else if (sym === false) {
-        
-        }
-    }
-}
+
+//      passwordRan[Math.floor(Math.random() * passwordRan.length)]
+//         console.log(passwordRan)
+//         return passwordRan;
+//     }
+
+
 
     //             function writeLowerCase() {
     //                 var text1 = '';
